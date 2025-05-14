@@ -1,0 +1,87 @@
+version: "2.0"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: User asks for a restaurant
+    steps:
+      - intent: find_restaurant
+      - action: action_send_custom_message
+      - intent: ask_cuisine
+      - action: action_ask_cuisine
+
+  - story: User provides cuisine type and city, gets restaurant suggestions
+    steps:
+      - intent: find_restaurant
+      - action: action_ask_cuisine
+      - intent: inform
+      - action: action_fetch_restaurant_data
+      - action: action_send_restaurant_suggestions
+
+  - story: User greets and asks for a restaurant suggestion
+    steps:
+      - intent: greet
+      - action: action_send_custom_message
+      - intent: find_restaurant
+      - action: action_ask_cuisine
+
+  - story: User selects a cuisine type and requests restaurant data
+    steps:
+      - intent: ask_cuisine
+      - action: action_fetch_restaurant_data
+      - action: action_send_restaurant_suggestions
+
+  - story: User provides cuisine and asks for a restaurant
+    steps:
+      - intent: inform
+        entities:
+          - cuisine_type: "Mexican"
+      - action: action_ask_city
+
+  - story: User provides both city and cuisine
+    steps:
+    - intent: inform
+      entities:
+        - cuisine_type: "Mexican"
+    - intent: inform
+      entities:
+        - city: "New York"
+    - action: action_fetch_restaurant_data
+    - action: action_send_restaurant_suggestions
+
+  - story: User requests a restaurant
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: find_restaurant
+      - action: action_ask_cuisine
+      - intent: inform
+      - action: action_ask_city
+      - intent: inform
+      - action: action_fetch_restaurant_data
+

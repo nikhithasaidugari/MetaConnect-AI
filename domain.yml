@@ -1,0 +1,57 @@
+# domain.yml
+
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_cuisine
+  - find_restaurant
+  - suggest_restaurant
+
+entities:
+  - cuisine_type
+  - city
+
+slots:
+  city:
+    type: text
+    influence_conversation: true
+  cuisine_type:
+    type: text
+    influence_conversation: true
+
+actions:
+  - action_ask_city
+  - action_ask_cuisine
+
+responses:
+  utter_ask_cuisine:
+    - text: "What type of cuisine are you looking for?"
+  utter_ask_city:
+    - text: "Which city do you want to find a restaurant in?"
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_happy:
+    - text: "I'm glad you're feeling great! Let me know if you need any help."
+  utter_cheer_up:
+    - text: "I'm really sorry you're feeling down. How can I help cheer you up?"
+  utter_did_that_help:
+    - text: "Did that help? Let me know if you need more assistance."
+  utter_iamabot:
+    - text: "Yes, I am a bot, here to help you with restaurant information!"
+  utter_mood_great:
+    - text: "Glad to hear you're feeling great!"
+  utter_mood_unhappy:
+    - text: "I'm sorry to hear that. Can I help with anything else?"
+
+session_config:
+  session_expiration_time: 3000
+  carry_over_slots_to_new_session: true

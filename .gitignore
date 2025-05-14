@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.env
+*.env
+*.log
+
+# Virtualenv
+metaconnect_env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Rasa
+*.db
+models/
+*.nlu.yml
+*.md
+*.json
+
+# Node
+node_modules/
+build/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+*.pyd

@@ -1,0 +1,78 @@
+version: "2.0"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - see you later
+      - good night
+      - goodbye
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - wonderful
+
+  - intent: mood_unhappy
+    examples: |
+      - I'm sad
+      - I'm feeling down
+      - not good
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you human?
+      - are you real?
+
+  - intent: ask_cuisine
+    examples: |
+      - What kind of cuisine are you looking for?
+      - I want to try a [Mexican](cuisine_type) restaurant
+      - Any [Italian](cuisine_type) options available?
+
+  - intent: find_restaurant
+    examples: |
+      - Find me a restaurant
+      - Give me a restaurant
+      - Suggest a [Mexican](cuisine_type) restaurant
+      - Show me an [Italian](cuisine_type) restaurant
+      - Find me some restaurants in [New York](city)
+
+
+  - intent: inform
+    examples: |
+      - I want to eat [Mexican](cuisine_type)
+      - I'm looking for a [restaurant](cuisine_type)
+      - Find me a [Mexican](cuisine_type) restaurant
+      - [New York](city) restaurants
+
+  - intent: suggest_restaurant
+    examples: |
+      - Can you suggest some restaurants?
+      - I'm looking for some restaurant recommendations
+      - Tell me some good places to eat
