@@ -1,4 +1,4 @@
-# MetaConnect-AI
+# MetaConnect-AI ChatBot
 
 MetaConnect-AI is an intelligent restaurant support system.
 It leverages conversational AI with Rasa, FastAPI for metadata search, and React for an intuitive frontend — all built to streamline restaurant discovery and support.
@@ -18,9 +18,3 @@ It leverages conversational AI with Rasa, FastAPI for metadata search, and React
 - **Chatbot**: Rasa
 - **Frontend**: React (metaconnectai-ui)
 - **DevOps**: Docker, Git LFS, AWS
-
-## 🚀 How to Run Locally
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/nikhithasaidugari/MetaConnect-AI.git
